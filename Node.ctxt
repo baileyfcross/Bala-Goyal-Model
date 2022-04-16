@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.target=Node
-comment0.text=\n\ This\ abstract\ node\ class\ helps\ us\ put\ all\ of\ the\ common\n\ values\ for\ each\ node\ in\ them\ without\ retyping\ them\ all\ out\n\n\ @author\ (Bailey\ Cross)\n\ @version\ (0.1)\n
-comment1.params=
-comment1.target=int\ roll()
-comment2.params=
-comment2.target=double\ feedback()
-numComments=3
