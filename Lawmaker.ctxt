@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=Lawmaker
-comment0.text=\n\ The\ Lawmaker\ class\ represents\ a\ Lawmaker\ as\ a\ node\ in\ the\n\ Model\n\n\ @author\ (Bailey\ Cross)\n\ @version\ (0.1)\n
-comment1.params=
-comment1.target=Lawmaker()
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Lawmaker\n
-numComments=2
