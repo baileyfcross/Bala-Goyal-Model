@@ -16,6 +16,7 @@ public abstract class Node
     public int roll(){
         return rm.nextInt(21);
     }
+    
     public double feedback(){
         return 0.0;
     }   

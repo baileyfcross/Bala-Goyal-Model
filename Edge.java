@@ -17,4 +17,12 @@ public class Edge
         this.n1 = n1;
         this.n2 = n2;
     }
+    
+    public Node getOrigin(){
+        return n1;
+    }
+    
+    public Node getDest(){
+        return n2;
+    }
 }

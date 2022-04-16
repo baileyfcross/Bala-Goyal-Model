@@ -15,9 +15,4 @@ public class Propagandist extends Node
     {
         credenceValue = initalRm.nextInt();
     }
-    
-    public int roll(){
-        
-        return 1;
-    }
 }
