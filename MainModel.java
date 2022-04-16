@@ -91,33 +91,78 @@ public class MainModel
         System.out.println("Scientist Inital Credence Values:");
         for(Scientist s: scientists){
             System.out.println("Scientist "+ s.getName() +" Credence Value: "
-                + s.getcredenceValue());
-                
-            System.out.println("Is the node Light?: " 
-                + s.colorNode());
+                + s.getCredenceValue());
+
+            String temp;
+            if(s.colorNode()){
+                temp = "Light";
+            } else {
+                temp = "Dark";
+            }
+            System.out.println("Color: " + temp);
+            Spacer();
         }
-        
+
         /*
          * This is the roll iterations. We want to do the feedbac
          * loop inside of the iterations as well.
          */
+
         int iteration = 1;
         while (iteration < 4){
             Spacer();
             System.out.println("Rolling Iteration " + iteration +
-            " for Scientists");
+                " for Scientists");
             for(Scientist s: scientists){
                 int roll = s.roll();
                 System.out.println("Scientist "+ s.getName() +" Roll Value: "
                     + roll);
-                if(roll < 5){
-                    
+                if(s.getLight()){
+                    // Action A
+                    if(roll < 5){
+                        s.successList[iteration - 1] = false;
+                    } else {
+                        s.successList[iteration - 1] = true;
+                    }
                 } else {
-                    
+                    // Action B
+                    if(roll < 10){
+                        s.successList[iteration - 1] = false; 
+                    } else {
+                        s.successList[iteration - 1] = true;
+                    }
                 }
             }
-            
             iteration++;
+        }
+
+        /*
+         * After we do the iterations we want to see the Success
+         * Rate for each scientist
+         */
+
+        for(Scientist s: scientists){
+            if(s.returnSR() > 0.5){
+                s.setCredenceValue(1);
+            } else {
+                s.setCredenceValue(-0.5);
+            }
+        }  
+
+        Spacer();
+        System.out.println("Updated Credence Values: ");
+        for(Scientist s: scientists){
+            System.out.println("Scientist "+ s.getName() +" Credence Value: "
+                + s.getCredenceValue());
+            
+            String temp;
+            if(s.colorNode()){
+                temp = "Light";
+            } else {
+                temp = "Dark";
+            }
+            System.out.println("Color: " + temp);
+            Spacer();
         }
     }
 
