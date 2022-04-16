@@ -1,12 +1,10 @@
 ------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all they need to know. The comments should usually include at least:
+Java Project for the Bala-Goyal Model in Philosophy
 ------------------------------------------------------------------------
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+PROJECT TITLE: Bala-Goyal Model in Philosophy
+PURPOSE OF PROJECT: To make a Java version of the Bala-Goyal Model in Philosophy
+VERSION or DATE: 0.1
+HOW TO START THIS PROJECT: N/A
+AUTHORS: Bailey Cross
+USER INSTRUCTIONS: N/A
