@@ -11,20 +11,38 @@ public class MainModel
     public static void main(String args[]){
         /*
          * Lets start with 5 Scientists
+         * 
+         * This implentation is obviously static (Hard Coded).
+         * If I wanted to create a dynamic array with a user input
+         * for Scientists I could import arraylist or doubly linked
+         * list then use the dynamic aspect of those classes.
          */
-        int numberOfS = 5;
-        Scientist s1 = new Scientist();
-        Scientist s2 = new Scientist();
-        Scientist s3 = new Scientist();
-        Scientist s4 = new Scientist();
-        Scientist s5 = new Scientist();
+        
+        Scientist[] scientists = new Scientist[5];
+        Scientist s1 = new Scientist("s1");
+        scientists[0] = s1;
+        
+        Scientist s2 = new Scientist("s2");
+        scientists[1] = s2;
+        
+        Scientist s3 = new Scientist("s3");
+        scientists[2] = s3;
+        
+        Scientist s4 = new Scientist("s4");
+        scientists[3] = s4;
+        
+        Scientist s5 = new Scientist("s5");
+        scientists[4] = s5;
         
         /*
          *  Next we can have 2 Law Makers
          */
         
+        Lawmaker[] lawmakers = new Lawmaker[2];
         Lawmaker l1 = new Lawmaker();
+        lawmakers[0] = l1;
         Lawmaker l2 = new Lawmaker();
+        lawmakers[1] = l2;
         
         /*
          * Finally, we will now incorperate the propagandist
@@ -34,7 +52,11 @@ public class MainModel
         
         /*
          * The reason we have redundant edges is because
-         * that will represent two way edges
+         * that will represent two way edges.
+         * In the more complex aspects of the model
+         * the lawmakers are only one way listeners
+         * So in order to model that, I will use redundant edge
+         * objects
          */
         s1.connectedEdges[0] = new Edge(s1,s2);
         s1.connectedEdges[1] = new Edge(s1,s3);
@@ -61,17 +83,17 @@ public class MainModel
         s5.connectedEdges[2] = new Edge(s5,s3);
         s5.connectedEdges[3] = new Edge(s5,s4);
         
-        System.out.println("Scientist 1 Credence Value: "+ 
-            s1.getcredenceValue());
-        System.out.println("Scientist 2 Credence Value: "+ 
-            s2.getcredenceValue());
-        System.out.println("Scientist 3 Credence Value: "+ 
-            s3.getcredenceValue());
-        System.out.println("Scientist 4 Credence Value: "+ 
-            s4.getcredenceValue());
-        System.out.println("Scientist 5 Credence Value: "+ 
-            s5.getcredenceValue());        
+        /*
+         * Print out the Inital Credence Values
+         * For each Scientist
+         */
+        
+        System.out.println("Scientist Credence Values:");
+        for(Scientist s: scientists){
+            System.out.println("Scientist "+ s.getName() +" Credence Value: "
+            + s.getcredenceValue());
+        }
+
+        
     }
-    
-    
 }
