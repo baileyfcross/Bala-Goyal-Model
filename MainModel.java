@@ -1,4 +1,8 @@
-
+import javafx.application.*;
+import javafx.stage.*;
+import javafx.scene.*;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
 /**
  * This is where we bring all of our classes together and start
  * doing the iterations
@@ -6,9 +10,22 @@
  * @author (Bailey Cross)
  * @version (0.1)
  */
-public class MainModel
+public class MainModel extends Application
 {
     public static void main(String args[]){
+        launch(args);
+    }
+    
+    @Override public void start(Stage primartStage){
+        
+        Button btn = new Button();
+        btn.setText("Click to Iterate");
+        btn.setOnAction(e -> iteration());
+        
+        
+    }
+
+    public void iteration(){
         /*
          * Lets start with 5 Scientists
          * 
@@ -164,9 +181,9 @@ public class MainModel
             System.out.println("Color: " + temp);
             Spacer();
         }
+        
     }
-
-    public static void Spacer(){
+    public void Spacer(){
         System.out.println();
     }
 }
